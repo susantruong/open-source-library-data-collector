@@ -10,6 +10,7 @@ Hello! Thank you for choosing to help contribute to one of the SendGrid open sou
 - [Style Guidelines & Naming Conventions](#style-guidelines-and-naming-conventions)
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Code Reviews](#code-reviews)
+- [The process of forking and branching off the development branch](#fork-branch-off-development-branch)
 
 <a name="roadmap"></a>
 We use [Milestones](https://github.com/sendgrid/open-source-library-data-collector/milestones) to help define current roadmaps, please feel free to grab an issue from the current milestone. Please indicate that you have begun work on it to avoid collisions. Once a PR is made, community review, comments, suggestions and additional PRs are welcomed and encouraged.
@@ -247,5 +248,81 @@ Please run your code through:
     
 ## Code Reviews<a name="code-reviews"></a>
 If you can, please look at open PRs and review them. Give feedback and help us merge these PRs much faster! If you don't know how, GitHub has some <a href="https://help.github.com/articles/about-pull-request-reviews/">great information on how to review a Pull Request.</a>
+
+<a name="fork-branch-off-development-branch"></a>
+## Forking and branching off the development branch
+
+### Step A: Fork a repository (to get a copy of the original sendgrid/open-source-library-data-collector repository) ###
+1.	On GitHub, go to the sendgrid/open-source-library-data-collector repository
+2.	Click `Fork` button in the top-right corner.
+
+### Step B: Create a local clone of your fork ###
+You have a fork of the sendgrid/open-source-library-data-collector repository. However,you don't have all files of that repository on your local computer. Let’s clone your fork to have all files on your computer.
+1.	On GitHub, go to **your fork** of the sendgrid/open-source-library-data-collector repository.
+2.	Click `Clone or download` button.
+3.	In the Clone with HTTPs section, copy the clone URL for the repository.
+4.	Open Terminal.
+5.	Type `git clone`, and then paste the URL you copied in step 3.
+
+    ```bash
+    git clone https://github.com/susantruong/open-source-library-data-collector.git
+    ```
+
+6.	Press Enter. 
+Now, you have a local copy of your fork of the open-source-library-data-collector repository.
+
+### Step C: Configure Git to sync your fork with the original open-source-library-data-collector repository ###
+1.	On GitHub, go to the open-source-library-data-collector repository.
+2.	Under the repository, click `Clone and download` button.
+3.	In the Clone with HTTPs section, copy the clone URL for the repository.
+4.	Open Terminal.
+5.	Change directory/directories to the location of the fork you cloned in Step B.
+6.	Type `git remote -v` and then press Enter. You will see the current configured remote repository for your fork
+
+    ```bash
+    sukes-MacBook-puro:open-source-library-data-collector susantruong$ git remote -v 
+    origin	https://github.com/susantruong/open-source-library-data-collector.git (fetch)
+    origin	https://github.com/susantruong/open-source-library-data-collector.git (push)
+    ```
+7.	Type git remote add upstream, and then paste the URL you copied in Step 2 and then press Enter.
+
+    ```bash
+    git remote add upstream https://github.com/sendgrid/open-source-library-data-collector.git
+    ```
+
+8.	Type git remote -v to see the new upstream repository you have specified for your fork.
+
+    ```bash
+    sukes-MacBook-puro:open-source-library-data-collector susantruong$ git remote -v
+    origin	https://github.com/susantruong/open-source-library-data-collector.git (fetch)
+    origin	https://github.com/susantruong/open-source-library-data-collector.git (push)
+    upstream	https://github.com/sendgrid/open-source-library-data-collector.git (fetch)
+    upstream	https://github.com/sendgrid/open-source-library-data-collector.git (push)    
+    ```
+
+“origin” is the URL of your fork
+“upstream” is the URL for the original repository 
+
+### Step D: Make a branch ###
+Type `git checkout -b <branch-name>`. 
+For example, I am fixing the issue #151. On Terminal, type `git checkout -b issue-151`
+
+### Step E: Start making all fixes to your issue  ###
+For my issue, I fixed only one file CONTRIBUTING.md
+
+### Step F: Make a Pull Request (PR) ###
+1.	On Terminal, type `git status` in order to see what files you have changed.
+2.	Type `git add file1 file2 file3` (if you have changed 3 files)
+For example, in my issue, I fixed only one file CONTRIBUTING.md
+`git add CONTRIBUTING.md`
+3.	Type `git commit -m “commit_ description”`.
+4.	Type `git log` to see the commit history.
+5.	Type `git push origin branch_name`  .
+For example, in my issue, on terminal, type `git push origin issue-151`.
+
+### Reference: ###
+https://help.github.com/articles/fork-a-repo/#platform-mac
+
+
 
 If you have any additional questions, please feel free to [email](mailto:dx@sendgrid.com) us or create an issue in this repo.
