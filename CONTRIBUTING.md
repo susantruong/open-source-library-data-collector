@@ -313,8 +313,10 @@ For my issue, I fixed only one file CONTRIBUTING.md
 ### Step F: Make a Pull Request (PR) ###
 1.	On Terminal, type `git status` in order to see what files you have changed.
 2.	Type `git add file1 file2 file3` (if you have changed 3 files)
-For example, in my issue, I fixed only one file CONTRIBUTING.md
-`git add CONTRIBUTING.md`
+    For example, in my issue, I fixed only one file CONTRIBUTING.md
+    
+    `git add CONTRIBUTING.md`
+
 3.	Type `git commit -m “commit_ description”`.
 4.	Type `git log` to see the commit history.
 5.	Type `git push origin branch_name`  .
